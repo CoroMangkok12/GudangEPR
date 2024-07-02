@@ -1,0 +1,19 @@
+# Set port
+server:
+  port: 9005
+
+# Set database connnection
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pi
+    username: root
+    password:
+  # Set jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true

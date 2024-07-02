@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SPB</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/img/icons/van.png}" sizes="16x16">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script th:src="@{/js/kirim.js}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img th:src="@{/img/LogosB.png}" alt="Logo" height="30" class="d-inline-block align-top mr-3">
+                <span class="company-name">PT. Enggal Prima Raya</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="http://localhost:9009/web/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="http://localhost:9009/web/barangmasuk">Gudang</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://localhost:9009/web/kirim">SPB</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-danger" id="logoutButton">Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mt-5">Pengiriman Barang</h1>
+
+        <button class="btn btn-secondary mt-3" id="cetakButton">PDF</button>
+        <table class="table mt-3 table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Code</th>
+                    <th>Nama</th>
+                    <th>Qty Available</th>
+                    <th>Qty to Send</th>
+                    <th>Select</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="barangMasuk : ${barangMasukList}">
+                    <td th:text="${barangMasuk.code}">Code</td>
+                    <td th:text="${barangMasuk.nama}">Name</td>
+                    <td th:text="${barangMasuk.qty}">Qty</td>
+                    <td><input type="number" class="form-control qtyInput" min="1" max="${barangMasuk.qty}" value="0"></td>
+                    <td><input type="checkbox" class="barangCheckbox large-checkbox"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

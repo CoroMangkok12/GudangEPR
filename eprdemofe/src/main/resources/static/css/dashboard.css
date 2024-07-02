@@ -1,0 +1,50 @@
+body {
+    background-color: #f4f7f6;
+    font-family: 'Arial', sans-serif;
+}
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+    background-color: #4e73df;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 1rem;
+}
+.card-body {
+    padding: 1.5rem;
+}
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.card-text {
+    font-size: 1.25rem;
+}
+.container {
+    margin-top: 50px;
+}
+
+/* Animasi untuk count up */
+@keyframes countup {
+    from {
+        content: '0';
+    }
+    to {
+        content: '100'; /* Ganti dengan angka yang diinginkan */
+    }
+}
+
+.countup::after {
+    animation: countup 2s ease-out forwards;
+    content: '0'; /* Angka awal */
+    display: block;
+    font-size: 3em; /* Ukuran teks */
+    text-align: center;
+}
+

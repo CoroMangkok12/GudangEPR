@@ -1,0 +1,134 @@
+/* src/main/resources/static/css/styles.css */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+#loginResult {
+    margin-top: 20px;
+}
+
+h2 {
+    color: #343a40;
+}
+
+body {
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-nav .nav-item .nav-link {
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #333; /* Bootstrap primary color */
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    font-weight: bold;
+    color: #333; /* Bootstrap primary color */
+}
+
+#logoutButton {
+    background-color: #ff6666;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#logoutButton:hover {
+    background-color: #ff4d4d;
+}
+.btn-sm {
+    margin-right: 5px;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+table th, table td {
+    text-align: center;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    text-overflow: ellipsis;
+}
+
+.large-checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.navbar-custom {
+    background: linear-gradient(45deg, #8e54e9, #4776e6);/* Change this color to your desired background color */
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link,
+.navbar-custom .btn {
+    color: hsl(0, 0%, 100%);
+    font-family: 'Poppins', sans-serif; /* Change this color to your desired text color */
+}
+
+.company-name {
+    font-size: 25px; /* Adjust this value as needed */
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif; /* Optional: makes the text bold */
+}
+
+.card-text {
+    font-size: 2.5rem;
+    transition: all 0.5s ease-in-out;
+}
+.btn-group {
+    display: flex;
+}
+
+.btn-group .btn {
+    margin-right: 10px;
+}
+
+#searchBar {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background-color: #f8f9fa;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23495057" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 16px 16px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#searchBar:focus {
+    outline: none;
+    border-color: #4776e6;
+    box-shadow: 0 0 0 3px rgba(71, 118, 230, 0.25);
+}
+
+#searchBar::placeholder {
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column;
+    }
+    
+    .btn-group, #searchBar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

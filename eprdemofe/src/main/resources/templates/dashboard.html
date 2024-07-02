@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/img/icons/dash.png}" sizes="16x16">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/dashboard.js}"></script>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img th:src="@{/img/LogosB.png}" alt="Logo" height="30" class="d-inline-block align-top mr-3">
+                <span class="company-name">PT. Enggal Prima Raya</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://localhost:9009/web/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:9009/web/barangmasuk">Gudang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:9009/web/kirim">SPB</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-danger" id="logoutButton">Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Dashboard</h1>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Jenis Barang</h5>
+                            <p id="totalUniqueItems" class="card-text display-3 text-center" th:text="${totalUniqueItems}">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Quantity Barang</h5>
+                            <p id="totalQuantity" class="card-text display-3 text-center" th:text="${totalQuantity}">0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Last Activity</h5>
+                            <p class="card-text"></p><span th:text="${#temporals.format(lastActivity, 'yyyy-MM-dd HH:mm:ss')}">No activity</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Welcome</h5>
+                            <p class="card-texta">Hello mate !</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Access</h5>
+                            <p class="card-text"></p>
+                            <button type="button" class="btn btn-primary btn-sm update-btn">Add</button>
+                            <button type="button" class="btn btn-warning btn-sm update-btn">Update</button>
+                            <button type="button" class="btn btn-danger btn-sm delete-btn">Delete</button>
+                            <button type="button" class="btn btn-secondary btn-sm delete-btn">PDF</button>
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
